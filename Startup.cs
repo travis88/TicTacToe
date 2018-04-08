@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using TicTacToe.Extensions;
 using TicTacToe.Services;
 
 namespace TicTacToe
@@ -34,7 +35,7 @@ namespace TicTacToe
             }
 
             app.UseStaticFiles();
-
+            app.UseCommunicationMiddleware();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
