@@ -65,7 +65,7 @@ namespace TicTacToe
             app.UseCommunicationMiddleware();
             // app.UseDirectoryBrowser();
             var options = new RewriteOptions()
-                .AddRewrite("newuser", "/UserRegistration/Index", false);
+                .AddRewrite("NewUser", "/UserRegistration/Index", false);
             app.UseRewriter(options);
             app.UseMvc(routes =>
             {
@@ -74,6 +74,7 @@ namespace TicTacToe
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
             app.UseStatusCodePages("text/plain", "HTTP Error - Status Code: {0}");
+            app.UseStatusCodePagesWithReExecute("/error/{0}");
         }
     }
 }

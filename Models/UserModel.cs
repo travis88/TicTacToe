@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace TicTacToe.Models
 {
@@ -17,24 +18,28 @@ namespace TicTacToe.Models
         /// Имя
         /// </summary>
         /// <returns></returns>
+        [Required()]
         public string FirstName { get; set; }
 
         /// <summary>
         /// Фамилия
         /// </summary>
         /// <returns></returns>
+        [Required()]
         public string LastName { get; set; }
 
         /// <summary>
         /// Email
         /// </summary>
         /// <returns></returns>
+        [Required(), DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         /// <summary>
         /// Пароль
         /// </summary>
         /// <returns></returns>
+        [Required(), DataType(DataType.Password)]
         public string Password { get; set; }
 
         /// <summary>
