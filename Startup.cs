@@ -73,8 +73,8 @@ namespace TicTacToe
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-            app.UseStatusCodePages("text/plain", "HTTP Error - Status Code: {0}");
-            app.UseStatusCodePagesWithReExecute("/error/{0}");
+            // app.UseStatusCodePages("text/plain", "HTTP Error - Status Code: {0}");
+            // app.UseStatusCodePagesWithReExecute("/error/{0}");
         }
     }
 }
